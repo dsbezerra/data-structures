@@ -1,6 +1,3 @@
-#include <vector>
-#include <unordered_set>
-
 internal vector<int>
 PairSumQuadratic(vector<int> Array, int Sum)
 {
@@ -10,7 +7,7 @@ PairSumQuadratic(vector<int> Array, int Sum)
     {
         int TestNumber = Array[TestNumberIndex];
         
-        for (int NumberIndex = 0; NumberIndex < Array.size(); ++NumberIndex)
+        for (int NumberIndex = 1; NumberIndex < Array.size(); ++NumberIndex)
         {
             int Number = Array[NumberIndex];
             if (TestNumber + Number == Sum)
@@ -92,7 +89,7 @@ Pairs(void)
     } 
     else
     {
-        cout << Pair[0] << "," << Pair[1] << endl; 
+        cout << Pair[0] << "," << Pair[1] << endl;
     }
 #endif
 }

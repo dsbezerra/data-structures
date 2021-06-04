@@ -2,17 +2,22 @@
 
 #include <iostream>
 #include <chrono>
-#include <windows.h>
+#include <vector>
+#include <unordered_set>
+#include <algorithm>
 
+#include <windows.h>
 #include "data_structures_types.h"
 
 using namespace std;
 
-enum time_complexity {
+enum time_complexity
+{
     None,
     Constant,    // O(1)
     Linear,      // O(n)
-    Quadratic,   // O(n^2) 
+    Quadratic,   // O(n^2)
+    Cubic,       // O(n^3) 
     Logarithmic, // O(logn)
     Linearithmic, // O(nlogn)
     Exponential, // 2^polyn
@@ -33,6 +38,7 @@ TimeComplexityString(time_complexity Complexity)
         COMPLEXITY_CASE(Constant,     "O(1)");
         COMPLEXITY_CASE(Linear,       "O(n)");
         COMPLEXITY_CASE(Quadratic,    "O(n^2)");
+        COMPLEXITY_CASE(Cubic,        "O(n^3)");
         COMPLEXITY_CASE(Logarithmic,  "O(nlogn)");
         COMPLEXITY_CASE(Linearithmic, "O(logn)");
         COMPLEXITY_CASE(Exponential,  "2^polyn");
@@ -48,14 +54,16 @@ TimeComplexityString(time_complexity Complexity)
 global_variable u64 GlobalPerfCountFrequencyResolution;
 
 internal void
-InitTimeStuff() {
+InitTimeStuff()
+{
     LARGE_INTEGER Result;
     QueryPerformanceFrequency(&Result);
     GlobalPerfCountFrequencyResolution= Result.QuadPart;
 }
 
 internal u64
-GetWallClock() {
+GetWallClock()
+{
     LARGE_INTEGER Result;
     QueryPerformanceCounter(&Result);
     
@@ -63,7 +71,8 @@ GetWallClock() {
 }
 
 internal inline real32
-GetSecondsElapsed(LARGE_INTEGER Start, LARGE_INTEGER End) {
+GetSecondsElapsed(LARGE_INTEGER Start, LARGE_INTEGER End)
+{
     real32 Result = ((real32) (End.QuadPart - Start.QuadPart) /
                      (real32) GlobalPerfCountFrequencyResolution);
     
@@ -71,7 +80,8 @@ GetSecondsElapsed(LARGE_INTEGER Start, LARGE_INTEGER End) {
 }
 
 internal inline real32
-SecondsElapsed(u64 LastCounter) {
+SecondsElapsed(u64 LastCounter)
+{
     real32 Result;
     
     LARGE_INTEGER CurrentCounter;
@@ -109,5 +119,7 @@ struct timed_block
     }
 };
 
+// NOTE(diego): Used to test if routines are correct 
 #define DS_TEST 0
+// NOTE(diego): Used to profile routines execution time
 #define DS_PROFILE 1
