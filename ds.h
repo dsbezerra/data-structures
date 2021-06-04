@@ -7,7 +7,7 @@
 #include <algorithm>
 
 #include <windows.h>
-#include "data_structures_types.h"
+#include "ds_types.h"
 
 using namespace std;
 
@@ -40,7 +40,7 @@ TimeComplexityString(time_complexity Complexity)
         COMPLEXITY_CASE(Quadratic,    "O(n^2)");
         COMPLEXITY_CASE(Cubic,        "O(n^3)");
         COMPLEXITY_CASE(Quasilienar,  "O(nlogn)");
-        COMPLEXITY_CASE(Linearithmic, "O(logn)");
+        COMPLEXITY_CASE(Logarithmic,  "O(logn)");
         COMPLEXITY_CASE(Exponential,  "2^polyn");
         COMPLEXITY_CASE(Factorial,    "O(n!)");
         COMPLEXITY_CASE(Polynomial,   "2^(O(logn))");

@@ -1,4 +1,4 @@
-#include "data_structures.h"
+#include "ds.h"
 #include "2_arrays_and_vectors/pairs.cpp"
 #include "2_arrays_and_vectors/triplets.cpp"
 
