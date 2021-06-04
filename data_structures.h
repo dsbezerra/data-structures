@@ -19,7 +19,7 @@ enum time_complexity
     Quadratic,   // O(n^2)
     Cubic,       // O(n^3) 
     Logarithmic, // O(logn)
-    Linearithmic, // O(nlogn)
+    Quasilienar, // O(nlogn)
     Exponential, // 2^polyn
     Factorial,   // O(n!)
     Polynomial,  // 2^(O(logn))
@@ -39,7 +39,7 @@ TimeComplexityString(time_complexity Complexity)
         COMPLEXITY_CASE(Linear,       "O(n)");
         COMPLEXITY_CASE(Quadratic,    "O(n^2)");
         COMPLEXITY_CASE(Cubic,        "O(n^3)");
-        COMPLEXITY_CASE(Logarithmic,  "O(nlogn)");
+        COMPLEXITY_CASE(Quasilienar,  "O(nlogn)");
         COMPLEXITY_CASE(Linearithmic, "O(logn)");
         COMPLEXITY_CASE(Exponential,  "2^polyn");
         COMPLEXITY_CASE(Factorial,    "O(n!)");
