@@ -84,7 +84,6 @@ Pairs(void)
         for (int Iteration = 0; Iteration < IterationCount; ++Iteration)
             PairSumLinear(Array, Sum);
     }
-    
 #else
     auto Pair = PairSumLinear(Array, Sum);
     if (Pair.size() == 0)
