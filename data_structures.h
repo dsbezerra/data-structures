@@ -6,7 +6,6 @@
 
 #include "data_structures_types.h"
 
-
 using namespace std;
 
 enum time_complexity {

@@ -30,7 +30,6 @@ PairSumQuadratic(vector<int> Array, int Sum)
     return Result;
 }
 
-
 internal vector<int>
 PairSumLinear(vector<int> Array, int Sum)
 {
