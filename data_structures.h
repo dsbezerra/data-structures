@@ -102,7 +102,7 @@ struct timed_block
     
     ~timed_block()
     {
-        auto Elapsed = SecondsElapsed(Start) * 1000.f;
+        r32 Elapsed = SecondsElapsed(Start) * 1000.f;
         
         string ComplexityString = TimeComplexityString(Complexity);
         cout << Name << " [" << ComplexityString << "] - took " << Elapsed << "ms" << endl;
