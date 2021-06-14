@@ -103,7 +103,7 @@ Triplets(void)
     {
         TIMED_BLOCK("TripletSum", Quadratic);
         for (int Iteration = 0; Iteration < IterationCount; ++Iteration)
-            PairSumQuadratic(Array, Sum);
+            TripletSum(Array, Sum);
     }
 #else
     auto Triplets = TripletSum(Array, Sum);
