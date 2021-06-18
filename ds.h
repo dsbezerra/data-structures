@@ -96,7 +96,6 @@ SecondsElapsed(u64 LastCounter)
 }
 
 #define TIMED_BLOCK(NAME, COMPLEXITY) timed_block TimedBlock##Name(##NAME, ##COMPLEXITY)
-typedef chrono::high_resolution_clock::time_point time_point;
 struct timed_block
 {
     string Name;
